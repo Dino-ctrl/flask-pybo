@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <!-- pybo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Hello, pybo!</title>
+</head>
+<body>
+<!-- 내비게"이션 바 -->
+{% include "navbar.html" %}
+<!-- 기본 템플릿에 삽입할 내용 Start -->
+{% block content %}
+{% endblock %}
+<!-- 기본 템플릿에 삽입할 내용 End -->
+<!-- jQuery JS -->
+<script src="{{ url_for('static', filename='jquery-3.7.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+<!-- 자바스크립트 Start -->
+{% block script %}
+{% endblock %}
+<!-- 자바스크립트 End -->
+</body>
+</html>
+<!-- 모든 템플릿에 공통으로 입력할 내용을 이 스크립트에 입력 -->
