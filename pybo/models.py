@@ -1,6 +1,3 @@
-from sqlalchemy.orm import backref
-from sqlalchemy.testing.pickleable import User
-
 from pybo import db
 
 

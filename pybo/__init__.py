@@ -3,7 +3,6 @@ from flask import Flask
 # app = Flask(__name__)
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
-import config
 from sqlalchemy import MetaData
 
 
@@ -26,7 +25,7 @@ def create_app():
     # 변수를 선언하는 건 함수 밖에서 선언하고, 초기화만 함수 내부에서 수행
     # app.config 환경 변수를 부르기 위해 app.config.from_object(config) 추가
     app = Flask(__name__)
-    app.config.from_object(config)
+    app.config.from_envvar('APP_CONFIG_FILE')
 
     # ORM 적용하기
     db.init_app(app)
@@ -57,6 +56,11 @@ def create_app():
     @app.template_filter('markdown')
     def markdown_filter(text):
         return Markup(markdown(text, extensions=['fenced_code', 'nl2br']))
+
+
+
     return app
+
+
 
 

@@ -5,6 +5,7 @@ from .. import db
 from pybo.models import Question, Answer, User
 from ..forms import QuestionForm, AnswerForm
 from pybo.views.auth_views import login_required
+#from auth_views import login_required
 from sqlalchemy import func
 from ..models import Question, Answer, User, question_voter
 
